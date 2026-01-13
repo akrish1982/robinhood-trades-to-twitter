@@ -1,0 +1,22 @@
+# Example crontab configuration for Robinhood Trade Bot
+# 
+# To install: crontab -e
+# Then paste one of the configurations below (adjust paths as needed)
+#
+# IMPORTANT: Replace /Users/ananth/code/personal/trades_to_twitter with your actual project path
+# IMPORTANT: Replace /usr/bin/python3 with your actual Python 3 path (use: which python3)
+
+# Option 1: Run every minute during market hours (9:30 AM - 4:00 PM ET, Mon-Fri)
+# Note: Market hours are 9:30 AM - 4:00 PM ET, but cron uses local time
+# Adjust hours based on your timezone relative to ET
+* 9-16 * * 1-5 cd /Users/ananth/code/personal/trades_to_twitter && /usr/bin/python3 main.py >> bot.log 2>&1
+
+# Option 2: Run every 5 minutes during market hours
+*/5 9-16 * * 1-5 cd /Users/ananth/code/personal/trades_to_twitter && /usr/bin/python3 main.py >> bot.log 2>&1
+
+# Option 3: Run every 15 minutes during market hours
+*/15 9-16 * * 1-5 cd /Users/ananth/code/personal/trades_to_twitter && /usr/bin/python3 main.py >> bot.log 2>&1
+
+# Option 4: Run at specific times (e.g., 10:00 AM, 12:00 PM, 2:00 PM, 4:00 PM)
+0 10,12,14,16 * * 1-5 cd /Users/ananth/code/personal/trades_to_twitter && /usr/bin/python3 main.py >> bot.log 2>&1
+
