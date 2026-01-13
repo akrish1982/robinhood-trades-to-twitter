@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/Users/ananth/code/personal/trades_to_twitter/.venv"
+VIRTUAL_ENV="/Users/ananth/code/personal/robinhood-trades-to-twitter/.venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

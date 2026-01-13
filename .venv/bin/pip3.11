@@ -1,4 +1,4 @@
-#!/Users/ananth/code/personal/trades_to_twitter/.venv/bin/python3
+#!/Users/ananth/code/personal/robinhood-trades-to-twitter/.venv/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys
