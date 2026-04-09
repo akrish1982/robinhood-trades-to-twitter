@@ -118,7 +118,37 @@ caffeinate -d
 
 ### Session Expired
 If you see authentication errors, delete `robinhood_session.pkl` and run again to re-authenticate.
-
+1. --test-mode
+Saves images and tweet text locally instead of posting to Twitter
+Creates a test_output/ directory
+Saves images as trade_card_*.png
+Saves tweet text as tweet_*.txt
+Still marks trades as posted in the database
+2. --options-orders
+Fetches options trades instead of equity trades
+Uses get_all_option_orders() from robin_stocks
+Extracts option symbols and details
+Stores in a separate database table (posted_options_trades)
+Formats tweet text for options contracts
+3. --balance
+Fetches account balance and portfolio information
+Gets open equity and options positions
+Saves data to account_balance.json
+Prints a summary to the console
+Usage Examples:
+python main.py --test-mode
+```
+# Test mode - save locally without posting
+python main.py --test-mode
+# Get options trades instead of equity
+python main.py --options-orders
+# Get account balance and positions
+python main.py --balance
+# Combine options with test mode
+python main.py --options-orders --test-mode
+# Normal mode (default behavior)
+python main.py
+```
 ### No Trades Posted
 - Check `bot.log` for errors
 - Verify your Robinhood account has recent filled orders
